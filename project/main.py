@@ -21,26 +21,30 @@ while True:
         print("프로그램을 종료합니다.")
         break
     if choice == "1":
+        grade = []
         print("학점을 입력해 주세요",
-              "A+, A, A-, B+, B, B-, ETC...",
+              "4.5, 4, 3.5, 3, 2.5, 2      ETC...",
               sep="\n")
         score = input("점수를 입력해 주세요")
-        if score == "A+":
-            print("4.5")
-        elif score == "A":
-            print("4.0")
-        elif score == "B+":
-            print("3.5")
-        elif score == "B":
-            print("3.0")
-        elif score == "C+":
-            print("2.5")
-        elif score == "C":
-            print("2.0")
-        elif score == "D+":
-            print("1.5")
-        elif score == "D":
-            print("1.0")
-        elif score == "F":
-            print("재수강...")
+        grade.push(score)
+        print(score)
         break
+
+    if choice == "2":
+        subjects = ['프로그래밍','python','C','C++','C#']
+        print("들어야 하는 과목을 보여드립니다.", subjects,
+              sep="\n")
+        subject = input("들었던 과목을 넣어주세요.종료는 0번 입니다.")
+
+        while True:
+            subjects.remove(subject)
+            print(subjects)
+            break
+           
+
+            # for subject in subjects:
+            # while True:
+            # if subject =="프로그래밍":
+            #     subjects.remove('프로그래밍')
+            #     print(subjects)
+            #     break
