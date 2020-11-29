@@ -14,9 +14,9 @@ def messege():
     )
 
 # 과목 수
-def subJect_Nums():
-    subJect_Nums = int(input("수강한 과목의 수를 입력해주세요: "))
-    return subJect_Nums
+def SubJect_Nums():
+    SubJect_Nums = int(input("수강한 과목의 수를 입력해주세요: "))
+    return SubJect_Nums
  
 # 과목 수 for함수
 def Sum_Scores(Subject_Nums):
@@ -52,7 +52,7 @@ def Exam_Score(Score):
     print(grade)
  
 # 전체 나누기 스코어
-def get_average_score(Score, Subject_Nums):
+def Get_Average(Score, Subject_Nums):
     result = float(Score) / Subject_Nums 
     return result
  
@@ -65,12 +65,12 @@ def main():
         print("프로그램을 종료합니다.")
     
     if choice == "1":
-        number_of_subjects = subJect_Nums()
-        total_score = Sum_Scores(number_of_subjects)
-        average_score = get_average_score(total_score, number_of_subjects)
-        Exam_Score(average_score)
+        Get_Subjects = SubJect_Nums()
+        Total_Score = Sum_Scores(Get_Subjects)
+        Average_Score = Get_Average(Total_Score, Get_Subjects)
+        Exam_Score(Average_Score)
     if choice == "2":
-        subjects = ['프로그래밍','python','C','C++','C#']
+        Subjects = ['프로그래밍','python','C','C++','C#']
         print(
             "",
             '----------------------',
@@ -85,25 +85,25 @@ def main():
         sub_choice = input('실행 할 번호를 입력해 주세요')
         if sub_choice == '1' :
             in_subject = input('리스트 안에 넣을 과목을 입력해주세요')
-            subjects.append(in_subject)
+            Subjects.append(in_subject)
         elif sub_choice == '2':
             del_subject = input('삭제할 과목을 입력해 주세요')
-            subjects.remove(del_subject)
+            Subjects.remove(del_subject)
         elif sub_choice == '3':
-            print(subjects)
+            print(Subjects)
         elif sub_choice == '4':
-            print("들어야 하는 과목을 보여드립니다.", subjects,
+            print("들어야 하는 과목을 보여드립니다.", Subjects,
               sep="\n")
             i = 0
-            while i < len(subjects):
+            while i < len(Subjects):
                 fir_Subject = input("들었던 과목을 넣어주세요.")
-                subjects.remove(fir_Subject)
-                print(subjects)
-                print(len(subjects))
+                Subjects.remove(fir_Subject)
+                print(Subjects)
+                print(len(Subjects))
 
-                if i == len(subjects):
+                if i == len(Subjects):
                     print("모든 과목을 수강하셨습니다.")
                     break
 
-if __name__ == '__main__':
-    main()
+#함수 실행
+main()
